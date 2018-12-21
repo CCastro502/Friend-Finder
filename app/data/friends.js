@@ -1,9 +1,13 @@
 var friendsArray = [
   {
-    customerName: "Ahmed",
-    customerEmail: "ahmed@example.com",
-    customerID: "afhaque89",
-    phoneNumber: "000-000-0000"
+    name: "Ahmed",
+    pictureURL: "www.google.com/image.png",
+    answers: [3, 2, 5, 4, 5, 1, 1, 2, 1, 5]
+  },
+  {
+    name: "Thomas",
+    pictureURL: "www.google.com/image.png",
+    answers: [5, 1, 2, 1, 1, 5, 4, 5, 2, 3]
   }
 ];
 

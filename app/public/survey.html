@@ -13,6 +13,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- Link to Local CSS -->
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/styling.css" /> -->
 </head>
@@ -21,8 +23,197 @@
     <div class="container">
         <h1>Survey Questions</h1>
         <hr class="my-4">
-        
+        <h3>About You</h3>
+        <br />
+        <form>
+            <label for="name">First name: </label>
+            <input type="text" class="form-control" id="name" placeholder="Jane Doe Smith" required>
+            <br />
+            <label for="pic">URL to Picture: </label>
+            <input type="text" class="form-control" id="pic" placeholder="www.google.com/image.png" required>
+            <hr class="my-4">
+
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 1</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q1" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 2</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q2" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 3</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q3" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 4</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q4" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 5</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q5" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 6</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q6" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 7</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q7" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 8</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q8" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 9</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q9" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-3">
+                    <h3>Question 10</h3>
+                    <p>Filler filler filler filler filler</p>
+                </div>
+                <div class="col-auto my-3 offset-md-1">
+                    <select class="custom-select mr-sm-2" id="q10" required>
+                        <option value="">Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            <br /><br />
+        </form>
     </div>
+    <script>
+        
+        $("#submit").on("click", function () {
+            event.preventDefault();
+            var userName = $("#name").val();
+            var userPic = $("#pic").val();
+            $("#name").val("");
+            $("#pic").val("");
+            var answers = [];
+            for (i = 0; i < 10; i++) {
+                answers.push($("#q" + (i + 1)).val());
+                $("#q" + (i + 1)).val("");
+            }
+        })
+        // var ans1 = $("#q1").val();
+        
+    </script>
 </body>
 
 </html>
