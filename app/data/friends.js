@@ -7,7 +7,7 @@ var friendsArray = [
   {
     name: "Thomas",
     pictureURL: "www.google.com/image.png",
-    answers: [5, 1, 2, 1, 1, 5, 4, 5, 2, 3]
+    answers: [1, 1, 2, 1, 1, 1, 4, 5, 2, 3]
   }
 ];
 

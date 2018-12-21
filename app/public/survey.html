@@ -197,22 +197,71 @@
             <br /><br />
         </form>
     </div>
+    <div class="modal" tabindex="-1" role="dialog" id="match-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Matching Friend Found</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your match.com match matcher</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        
+
+        function add(total, num) {
+            return parseInt(total) + parseInt(num);
+        }
+
         $("#submit").on("click", function () {
             event.preventDefault();
-            var userName = $("#name").val();
-            var userPic = $("#pic").val();
-            $("#name").val("");
-            $("#pic").val("");
+
             var answers = [];
+
+
             for (i = 0; i < 10; i++) {
                 answers.push($("#q" + (i + 1)).val());
                 $("#q" + (i + 1)).val("");
             }
+
+            var obj = {
+                name: $("#name").val(),
+                pictureURL: $("#pic").val(),
+                answers: answers
+            }
+
+            $.post("/api/friends", obj).then(function (data) {
+                console.log(data);
+            });
+            $.get("/api/friends", function (data) {
+                var startNum = data[data.length - 1].answers.reduce(add);
+                var compareNum = data[0].answers.reduce(add);
+                var comparison = Math.abs(startNum - compareNum);
+                console.log(`|${startNum} - ${compareNum}| = ${comparison}`);
+                var holder = 0;
+                var arrAccess = 0;
+                for (i = 1; i < (data.length - 1); i++) {
+                    holder = data[i].answers.reduce(add);
+                    if (Math.abs(holder - startNum) < comparison) {
+                        arrAccess = parseInt(i);
+                    }
+                }
+                $("#match-modal").modal()
+                // console.log(data[arrAccess]);
+            })
+            $("#name").val("");
+            $("#pic").val("");
         })
         // var ans1 = $("#q1").val();
-        
+
     </script>
 </body>
 
