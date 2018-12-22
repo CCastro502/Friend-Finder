@@ -7,7 +7,7 @@ var friendsArray = [
   {
     name: "Peter Griffin",
     pictureURL: "https://t7.rbxcdn.com/527b31c8925ded2782fdbdb396fe564a",
-    answers: [1, 1, 2, 1, 1, 1, 4, 5, 2, 3]
+    answers: [1, 1, 2, 1, 1, 1, 1, 1, 2, 3]
   }
 ];
 

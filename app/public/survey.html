@@ -32,7 +32,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 1</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>I am always on social media</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q1" required>
@@ -48,7 +48,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 2</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>I believe hygiene is important</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q2" required>
@@ -64,7 +64,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 3</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>I have a hard time being social in groups</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q3" required>
@@ -80,7 +80,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 4</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>I am a sensitive, caring person</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q4" required>
@@ -96,7 +96,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 5</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>My horoscope is the reason I act the way I do</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q5" required>
@@ -112,7 +112,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 6</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>My shakras are perfectly aligned</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q6" required>
@@ -128,7 +128,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 7</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>My third eye has been opened</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q7" required>
@@ -144,7 +144,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 8</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>I hate dogs</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q8" required>
@@ -159,7 +159,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 9</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>If my mom doesn't like you, neither do I</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q9" required>
@@ -175,7 +175,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-3">
                     <h3>Question 10</h3>
-                    <p>Filler filler filler filler filler</p>
+                    <p>Denim jackets look good</p>
                 </div>
                 <div class="col-auto my-3 offset-md-1">
                     <select class="custom-select mr-sm-2" id="q10" required>
@@ -246,17 +246,32 @@
                 $.post("/api/friends", obj).then(function (data) {
                 });
                 $.get("/api/friends", function (data) {
-                    var startNum = data[data.length - 1].answers.reduce(add);
-                    var compareNum = data[0].answers.reduce(add);
-                    var comparison = Math.abs(startNum - compareNum);
-                    var holder = 0;
                     var arrAccess = 0;
-                    for (i = 1; i < (data.length - 1); i++) {
-                        holder = data[i].answers.reduce(add);
-                        if (Math.abs(holder - startNum) < comparison) {
-                            arrAccess = parseInt(i);
+                    var diffHold = [];
+                    var diff = 100;
+                    for (j = 0; j < data.length; j++) {
+                        var x = 0;
+                        for (i = 0; i < 10; i++) {
+                            x += Math.abs(parseInt(data[data.length - 1].answers[i]) - parseInt(data[j].answers[i]));
+                        }
+                        diffHold.push(x);
+                    }
+                    console.log(diffHold);
+
+                    for (i = 0; i < (diffHold.length - 1); i++) {
+                        if (diffHold[i] < diff) {
+                            diff = diffHold[i];
+                            arrAccess = i;
                         }
                     }
+
+                    
+                    // for (i = 0; i < (data.length - 1); i++) {
+                    //     if (diffHold[i] < diff) {
+                    //         diff = diffHold[i];
+                    //         y = i;
+                    //     }
+                    // }
                     $("#modalBody").html(`<h5>${data[arrAccess].name}</h5><br /><img src=${data[arrAccess].pictureURL} height="300px" width="100%" />`);
                     $("#name").val("");
                     $("#pic").val("");
